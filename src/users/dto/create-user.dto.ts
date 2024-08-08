@@ -1,8 +1,9 @@
 // src/users/dto/create-user.dto.ts
-import { IsString, IsEmail, IsBoolean, IsDateString, ValidateNested } from 'class-validator';
+import { IsString, IsEmail, IsBoolean, IsDateString, ValidateNested, IsOptional, IsArray } from 'class-validator';
 import { Type } from 'class-transformer';
 import { AddressDto } from './address.dto';
 import { EmploymentDetailsDto } from './employment-details.dto';
+import { LivesCoveredDto } from './lives-covered.dto';
 
 export class CreateUserDto {
   @IsString()
@@ -41,6 +42,16 @@ export class CreateUserDto {
   postalAddress: AddressDto;
 
   @ValidateNested()
+  @Type(() => AddressDto)
+  @IsOptional()
+  previousResidentialAddress?: AddressDto;
+
+  @ValidateNested()
   @Type(() => EmploymentDetailsDto)
   employmentDetails: EmploymentDetailsDto;
+
+  // @IsArray()
+  // @ValidateNested({ each: true })
+  // @Type(() => LivesCoveredDto)
+  // livesCovered: LivesCoveredDto[];
 }

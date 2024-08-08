@@ -1,16 +1,39 @@
 // src/users/dto/address.dto.ts
-import { IsString } from 'class-validator';
+import { IsOptional, IsString } from 'class-validator';
 
 export class AddressDto {
   @IsString()
-  street: string;
+  @IsOptional()
+  addressLine1: string;
+
+  @IsString()
+  @IsOptional()
+  addressLine2?: string;
+
+  @IsString()
+  @IsOptional()
+  addressLine3?: string;
+
+  @IsString()
+  @IsOptional()
+  addressLine4?: string;
+
+  @IsString()
+  @IsOptional()
+  addressLine5?: string;
+
+  @IsString()
+  @IsOptional()
+  addressLine6?: string;
 
   @IsString()
   city: string;
 
   @IsString()
-  country: string;
+  @IsOptional()
+  postalCode: string;
 
   @IsString()
-  duration?: string; // Optional for postal address
+  @IsOptional()
+  countryCode: string;
 }
