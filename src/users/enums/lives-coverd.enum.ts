@@ -20,3 +20,10 @@ export enum Relationship {
     MyExtendedFamily = 'MyExtendedFamily',
   }
   
+
+
+  export enum AccountType {
+    SAVINGS = 'Savings',
+    CHECKING = 'Checking',
+    // Add other account types if needed
+}
