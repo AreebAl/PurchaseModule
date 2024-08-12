@@ -1,3 +1,53 @@
+// import { IsString, IsOptional, IsEmail, IsPhoneNumber, IsDate, IsEnum } from 'class-validator';
+// import { Relationship, FamilyMember, Category } from '../enums/lives-coverd.enum'; // Import your enums
+// import { Type } from 'class-transformer';
+
+// export class BeneficiaryDetailsDto {
+//   @IsEnum(Relationship)
+//   relationship: Relationship;
+
+//   @IsOptional()
+//   @IsString()
+//   title?: string;
+
+//   @IsString()
+//   firstName: string;
+
+//   @IsString()
+//   surname: string;
+
+//   @IsDate()
+//   @Type(() => Date) 
+//   dateOfBirth: Date;
+
+//   @IsEnum(FamilyMember)
+//   familyMember: FamilyMember;
+
+//   @IsString()
+//   nationality: string;
+
+//   @IsOptional()
+//   @IsString()
+//   idNumber?: string;
+
+//   @IsOptional()
+//   @IsEmail()
+//   email?: string;
+
+//   @IsOptional()
+//   @IsPhoneNumber(null)
+//   cellphoneNumber?: string;
+
+//   @IsEnum(Category)
+//   category: Category;
+// }
+
+
+
+
+
+
+
 import { IsString, IsOptional, IsDate, IsEnum, IsPhoneNumber, IsEmail } from 'class-validator';
 import { Type } from 'class-transformer';
 import { Relationship, FamilyMember, Category } from '../enums/lives-coverd.enum'; // Import your enums
