@@ -1,6 +1,6 @@
 // src/users/dto/create-user.dto.ts
 import { IsString, IsEmail, IsBoolean, IsDateString, ValidateNested, IsOptional, IsArray } from 'class-validator';
-import { Type } from 'class-transformer';
+import { Transform, Type } from 'class-transformer';
 import { AddressDto } from './address.dto';
 import { EmploymentDetailsDto } from './employment-details.dto';
 import { LivesCoveredDto } from './lives-covered.dto';
@@ -25,6 +25,7 @@ export class CreateUserDto {
   idExpiryDate: string;
 
   @IsBoolean()
+  @Transform(({ value }) => value === 'true')
   isPip: boolean;
 
   @IsEmail()

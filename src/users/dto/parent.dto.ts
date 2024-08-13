@@ -4,6 +4,7 @@ import { CreateUserDto } from './create-user.dto';
 import { LivesCoveredDto } from './lives-covered.dto';
 import { BeneficiaryDetailsDto } from './beneficiary-details.dto';
 import { PaymentDetailsDto } from './payment-details.dto';
+import { UploadDocumentsDto } from './upload-documents.dto';
 
 export class ParentDto {
   @ValidateNested()
@@ -25,5 +26,11 @@ export class ParentDto {
   @ValidateNested()
   @Type(() => PaymentDetailsDto)
   paymentDetails?: PaymentDetailsDto;
+
+  // @IsOptional()
+  // @IsArray()
+  // @ValidateNested({ each: true })
+  // @Type(()=>UploadDocumentsDto)
+  // uploadDocuments:UploadDocumentsDto[];
 
 }
