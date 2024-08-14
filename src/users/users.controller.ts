@@ -20,6 +20,7 @@ export class UsersController {
           cb(null, `${randomName}${fileExtName}`);
         },
       }),
+      limits: { fileSize: 2 * 1024 * 1024 }, // 2 MB file size limit
     }),
   )
   create(@Body() parentDto: ParentDto, @UploadedFiles() files:  Express.Multer.File[]) {
