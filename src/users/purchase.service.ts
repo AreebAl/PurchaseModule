@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { PurchaseDto } from './dto/purchase.dto';
 import * as fs from 'fs';
+import { LivesCoveredDto } from './dto/lives-covered.dto';
 
 @Injectable()
 export class PurchaseService {
@@ -10,11 +11,19 @@ export class PurchaseService {
     // Handle the document upload and generate file response
    // const uploadedDocuments = this.handleDocumentUpload(files);
     console.log(purchaseDto);
+    const livesCoveredWithAge = purchaseDto.livesCovered.map(livesCoveredData => {
+      const livesCovered = Object.assign(new LivesCoveredDto(), livesCoveredData);
+      return {
+        ...livesCovered,
+        age: livesCovered.getCurrentAge(),
+      };
+    });
 
     // Add documents to the purchase data
     const newPurchase = {
      // id: Date.now(),
       ...purchaseDto,
+      livesCovered: livesCoveredWithAge,
     //  uploadedDocuments,  // Append the uploaded documents here
     };
 

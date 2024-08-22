@@ -57,4 +57,20 @@ export class LivesCoveredDto {
   @Transform(({ value }) => value === 'true')
   @IsOptional()
   hasSpecialNeeds?: boolean;
+
+  // Method to calculate current age
+  getCurrentAge(): number {
+    const today = new Date();
+    const birthDate = new Date(this.dateOfBirth);
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDifference = today.getMonth() - birthDate.getMonth();
+    
+    // Check if the birthday has occurred yet this year
+    if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
+    }
+    
+    return age;
+  }
+
 }

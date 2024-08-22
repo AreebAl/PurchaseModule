@@ -8,7 +8,7 @@ export enum RELATIONSHIP {
 
   export enum COVERTYPE{
     MYSELF="Myself",
-    MY_EXTENDED_FAMILY='My_Extended_Family'
+    ME_AND_MY_DIRECT_FAMILY='Me_And_My_Direct_Family'
   }
   
   export enum FAMILYMEMBER {
@@ -21,25 +21,25 @@ export enum RELATIONSHIP {
     UNCLE = 'UNCLE',
     BROTHER = 'BROTHER',
     SISTER = 'SISTER',
-    BROTHER_IN_LAW = 'BROTHER_IN_LAW',
-    SISTER_IN_LAW = 'SISTER_IN_LAW',
-    SON_IN_LAW = 'SON_IN_LAW',
-    DAUGHTER_IN_LAW = 'DAUGHTER_IN_LAW',
-    GRAND_FATHER = 'GRAND_FATHER',
-    GRAND_MOTHER = 'GRAND_MOTHER',
-    GRAND_SON = 'GRAND_SON',
-    GRAND_DAUGHTER = 'GRAND_DAUGHTER',
-    FIRST_COUSINS = 'FIRST_COUSINS',
-    NIECE = 'NIECE',
-    NEPHEW = 'NEPHEW',
-    SON = 'SON',
-    DAUGHTER = 'DAUGHTER',
-    STEP_FATHER = 'STEP_FATHER',
-    STEP_MOTHER = 'STEP_MOTHER',
-    ADOPTIVE_FATHER = 'ADOPTIVE_FATHER',
-    ADOPTIVE_MOTHER = 'ADOPTIVE_MOTHER',
-    EX_HUSBAND = 'EX_HUSBAND',
-    EX_WIFE = 'EX_WIFE',
+    BROTHER_IN_LAW = 'Brother_In_Law',
+    SISTER_IN_LAW = 'Sister_In_Law',
+    SON_IN_LAW = 'Son_In_Law',
+    DAUGHTER_IN_LAW = 'Daughter_In_Law',
+    GRAND_FATHER = 'Grand_Father',
+    GRAND_MOTHER = 'Grand_Mother',
+    GRAND_SON = 'Grand_Son',
+    GRAND_DAUGHTER = 'Grand_Daughter',
+    FIRST_COUSINS = 'First_Cousins',
+    NIECE = 'Niece',
+    NEPHEW = 'Nephew',
+    SON = 'Son',
+    DAUGHTER = 'Daughter',
+    STEP_FATHER = 'Step_Father',
+    STEP_MOTHER = 'Step_Mother',
+    ADOPTIVE_FATHER = 'Adotive_Father',
+    ADOPTIVE_MOTHER = 'Adoptive_Mother',
+    EX_HUSBAND = 'Ex_Husbend',
+    EX_WIFE = 'Ex_Wife',
   }
 
 
