@@ -55,10 +55,11 @@ export class PurchaseController {
       console.log(purchaseDetails);
       //delete purchaseDetails.files;
       return {
+        id:randomUUID(),
+        activationDate:Date.now(),
         message: 'Policy applied successfully',
         data: purchaseDetails,
-        id:randomUUID(),
-        activationDate:Date.now()
+       
       };
     } catch (err) {
       console.log(err, "from controller");
