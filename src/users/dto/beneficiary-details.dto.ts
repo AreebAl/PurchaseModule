@@ -50,17 +50,17 @@
 
 import { IsString, IsOptional, IsDate, IsEnum, IsPhoneNumber, IsEmail } from 'class-validator';
 import { Type } from 'class-transformer';
-import { Relationship, FamilyMember, Category } from '../enums/lives-coverd.enum'; // Import your enums
+import { RELATIONSHIP, FAMILYMEMBER, CATEGORY } from '../enums/lives-coverd.enum'; // Import your enums
 
 export class BeneficiaryDetailsDto {
   @IsString()
   name: string;
 
   @IsString()
-  surname: string;
+  lastName: string;
 
-  @IsEnum(FamilyMember)
-  dependantType: FamilyMember;
+  // @IsEnum(FamilyMember)
+  // dependantType: FamilyMember;
 
   @IsString()
   nationalId: string;
@@ -69,8 +69,8 @@ export class BeneficiaryDetailsDto {
   @Type(() => Date) 
   dateOfBirth: Date;
 
-  @IsEnum(Relationship)
-  relationship: Relationship;
+  @IsEnum(FAMILYMEMBER)
+  relationship: FAMILYMEMBER;
 
 //   @IsEnum(Category)
 //   category: Category;

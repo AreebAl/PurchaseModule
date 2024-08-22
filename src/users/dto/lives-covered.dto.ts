@@ -1,24 +1,25 @@
 // src/users/dto/lives-covered.dto.ts
 import { IsEnum, IsNotEmpty, IsOptional, IsString, IsDate, IsBoolean, IsNumber } from 'class-validator';
-import { Category, FamilyMember, Relationship } from '../enums/lives-coverd.enum';
+import { CATEGORY, FAMILYMEMBER, RELATIONSHIP } from '../enums/lives-coverd.enum';
 import { Transform, Type } from 'class-transformer';
 
 export class LivesCoveredDto {
-  @IsEnum(Relationship)
-  @IsNotEmpty()
-  relationship: Relationship;
-
-  @IsEnum(FamilyMember)
+ 
+  @IsEnum(CATEGORY)
   @IsOptional()
-  familyMember?: FamilyMember;
+  category?: CATEGORY;
+  
+  @IsEnum(RELATIONSHIP)
+  @IsNotEmpty()
+  relationship: RELATIONSHIP;
+
+  @IsEnum(FAMILYMEMBER)
+  @IsOptional()
+  familyMember?: FAMILYMEMBER;
 
   @IsString()
   @IsNotEmpty()
   title: string;
-
-  @IsEnum(Category)
-  @IsOptional()
-  category?: Category;
 
   @IsString()
   @IsNotEmpty()
@@ -26,7 +27,7 @@ export class LivesCoveredDto {
 
   @IsString()
   @IsNotEmpty()
-  surname: string;
+  lastName: string;
 
   @IsDate()
   @IsNotEmpty()

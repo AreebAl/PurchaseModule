@@ -3,9 +3,8 @@ import { IsString, IsEmail, IsBoolean, IsDateString, ValidateNested, IsOptional,
 import { Transform, Type } from 'class-transformer';
 import { AddressDto } from './address.dto';
 import { EmploymentDetailsDto } from './employment-details.dto';
-import { LivesCoveredDto } from './lives-covered.dto';
 
-export class CreateUserDto {
+export class PersonalDetailsDto {
   @IsString()
   title: string;
 
@@ -13,9 +12,9 @@ export class CreateUserDto {
   firstName: string;
 
   @IsString()
-  surname: string;
+  lastName: string;
 
-  @IsString()
+  @IsString() 
   nationality: string;
 
   @IsString()
@@ -51,8 +50,4 @@ export class CreateUserDto {
   @Type(() => EmploymentDetailsDto)
   employmentDetails: EmploymentDetailsDto;
 
-  // @IsArray()
-  // @ValidateNested({ each: true })
-  // @Type(() => LivesCoveredDto)
-  // livesCovered: LivesCoveredDto[];
 }

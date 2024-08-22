@@ -1,5 +1,5 @@
 import { Type } from 'class-transformer';
-import { IsOptional, IsString, IsNumber, IsArray, ValidateNested } from 'class-validator';
+import { IsOptional, IsString, IsNumber, IsArray, ValidateNested, IsNotEmpty } from 'class-validator';
 
 // export class UploadDocumentsDto {
 //   @IsString()
@@ -19,8 +19,19 @@ import { IsOptional, IsString, IsNumber, IsArray, ValidateNested } from 'class-v
 
 
 export class UploadDocumentsDto {
-  @IsArray()
-  @ValidateNested({ each: true })
-  @Type(() => Object)  // Expecting files to be objects representing the files
-  files: any[];
+  @IsString()
+  @IsNotEmpty()
+  documentType: string;
+
+  @IsString()
+  @IsNotEmpty()
+  fileName: string;
+
+  @IsString()
+  @IsOptional()
+  fileType?: string;
+
+  @IsNumber()
+  @IsOptional()
+  fileSize?: number;
 }
